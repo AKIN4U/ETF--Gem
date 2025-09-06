@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [view, setView] = React.useState<View>('home');
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const sectionIds = ['about-us', 'eligibility', 'how-to-apply'];
+  const sectionIds = ['about-us', 'eligibility', 'how-to-apply', 'contact-us'];
   const activeSection = useScrollSpy(sectionIds, { rootMargin: '-100px 0px -50% 0px' });
 
   const handleNavClick = (target: View | string) => {
@@ -103,6 +103,7 @@ const App: React.FC = () => {
             <NavLink target="about-us">About</NavLink>
             <NavLink target="eligibility">Eligibility</NavLink>
             <NavLink target="how-to-apply">How to Apply</NavLink>
+            <NavLink target="contact-us">Contact</NavLink>
             <NavLink target="admin">Admin</NavLink>
             <NavLink target="applicant" isButton>Apply Now</NavLink>
           </div>
@@ -133,6 +134,7 @@ const App: React.FC = () => {
                      <MobileNavLink target="about-us">About</MobileNavLink>
                      <MobileNavLink target="eligibility">Eligibility</MobileNavLink>
                      <MobileNavLink target="how-to-apply">How to Apply</MobileNavLink>
+                     <MobileNavLink target="contact-us">Contact</MobileNavLink>
                      <MobileNavLink target="applicant">Apply Now</MobileNavLink>
                      <MobileNavLink target="admin">Admin Dashboard</MobileNavLink>
                   </div>

@@ -6,11 +6,12 @@ import PaginationControls from './PaginationControls';
 
 interface ApplicationsTableProps {
   applications: ApplicationSummary[];
+  onView: (id: string) => void;
 }
 
 const ITEMS_PER_PAGE = 8;
 
-const ApplicationsTable: React.FC<ApplicationsTableProps> = ({ applications }) => {
+const ApplicationsTable: React.FC<ApplicationsTableProps> = ({ applications, onView }) => {
   const [currentPage, setCurrentPage] = React.useState(1);
 
   // Reset to first page whenever the source data changes (e.g., due to filtering)
@@ -48,7 +49,7 @@ const ApplicationsTable: React.FC<ApplicationsTableProps> = ({ applications }) =
               <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Submission Date</th>
               <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Scholarship Type</th>
               <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">Status</th>
-              <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6"><span className="sr-only">Edit</span></th>
+              <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6"><span className="sr-only">Actions</span></th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200 bg-white">
@@ -60,7 +61,7 @@ const ApplicationsTable: React.FC<ApplicationsTableProps> = ({ applications }) =
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{app.scholarshipType}</td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500"><Badge status={app.status} /></td>
                         <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                            <a href="#" className="text-blue-600 hover:text-blue-900">View<span className="sr-only">, {app.applicantName}</span></a>
+                            <button onClick={() => onView(app.id)} className="text-blue-600 hover:text-blue-900">View<span className="sr-only">, {app.applicantName}</span></button>
                         </td>
                     </tr>
                 ))

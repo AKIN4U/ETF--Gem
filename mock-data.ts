@@ -1,4 +1,4 @@
-import { ApplicationSummary } from './types';
+import { ApplicationSummary, FormData, ParentData } from './types';
 
 export const mockApplications: ApplicationSummary[] = [
   {
@@ -86,3 +86,133 @@ export const mockApplications: ApplicationSummary[] = [
     scholarshipType: 'Tertiary',
   },
 ];
+
+
+const mockParentData: ParentData = {
+  surname: 'Johnson',
+  firstName: 'David',
+  middleName: 'O.',
+  residentialAddress: '123 Main St, Abuja',
+  telephoneNumber: '08012345678',
+  stateOfOrigin: 'Lagos',
+  lga: 'Ikeja',
+  town: 'Ikeja',
+  occupation: 'Civil Servant',
+  employer: 'Federal Ministry of Works',
+  salaryGrade: 'Grade Level 12',
+  estimatedAnnualIncome: '5,000,000 NGN',
+  hasOutstandingObligations: 'No',
+  outstandingObligationsDetails: '',
+  spouseName: 'Mary Johnson',
+  numberOfChildren: 3,
+  childrenAges: '16, 14, 10',
+  yearsInChurch: 15,
+  positionInChurch: 'Elder',
+  dutiesInChurch: 'Leads Bible study sessions.',
+};
+
+const mockApplicationData_APP001: FormData = {
+  personalInfo: {
+    surname: 'Johnson',
+    firstName: 'Adebayo',
+    middleName: 'T.',
+    applicationDate: '2024-07-20',
+    age: 16,
+    dob: '2008-05-15',
+    sex: 'Male',
+    stateOfOrigin: 'Lagos',
+    lga: 'Ikeja',
+    town: 'Ikeja',
+    passportPicture: { name: 'adebayo_passport.jpg' } as File,
+    hasReceivedBefore: 'No',
+    previousScholarshipDate: '',
+  },
+  academicStatus: {
+    schoolName: 'Capital Science Academy',
+    schoolAddress: 'Kuje, Abuja',
+    presentClass: 'SSS 3',
+    jambScore: 280,
+    childrenInClass: 30,
+    positionInClass: 2,
+    schoolFees: 150000,
+    textbookFees: 25000,
+    hasEnoughTextbooks: 'Yes',
+    hasLibraryAccess: 'Yes',
+    sentAwayForFees: 'No',
+    repeatedClass: 'No',
+  },
+  familyInfo: {
+    father: mockParentData,
+    mother: {
+      ...mockParentData,
+      surname: 'Johnson',
+      firstName: 'Mary',
+      occupation: 'Trader',
+      employer: 'Self-Employed',
+      estimatedAnnualIncome: '2,000,000 NGN',
+    },
+  },
+  documents: {
+    schoolFeesProof: { name: 'school_fees.pdf' } as File,
+    birthCertificate: { name: 'birth_cert.pdf' } as File,
+    primarySchoolCertificate: { name: 'primary_cert.jpg' } as File,
+    secondarySchoolCertificate: undefined,
+    jambResult: { name: 'jamb_result.pdf' } as File,
+    latestSchoolResult: { name: 'sss2_result.pdf' } as File,
+    financialAssistanceLetter: { name: 'assistance_letter.docx' } as File,
+  },
+  declarations: {
+    childConfirmation: true,
+    parentConfirmation: true,
+    churchMembershipConfirmation: 'Confirmed Member of CCC Central Cathedral',
+  },
+};
+
+const mockApplicationData_APP002: FormData = {
+  personalInfo: {
+    surname: 'Okoro',
+    firstName: 'Ngozi',
+    middleName: '',
+    applicationDate: '2024-07-19',
+    age: 15,
+    dob: '2009-02-10',
+    sex: 'Female',
+    stateOfOrigin: 'Imo',
+    lga: 'Owerri',
+    town: 'Owerri',
+    passportPicture: { name: 'ngozi_passport.jpg' } as File,
+    hasReceivedBefore: 'No',
+  },
+  academicStatus: {
+    schoolName: 'Federal Government Girls College, Owerri',
+    schoolAddress: 'Owerri, Imo State',
+    presentClass: 'SSS 2',
+    jambScore: '',
+    schoolFees: 80000,
+    textbookFees: 15000,
+    hasEnoughTextbooks: 'No',
+    hasLibraryAccess: 'Yes',
+    sentAwayForFees: 'Yes',
+    repeatedClass: 'No',
+  },
+  familyInfo: {
+    father: { ...mockParentData, surname: 'Okoro', firstName: 'Emeka', stateOfOrigin: 'Imo', lga: 'Owerri' },
+    mother: { ...mockParentData, surname: 'Okoro', firstName: 'Chinwe', stateOfOrigin: 'Imo', lga: 'Owerri' },
+  },
+  documents: {
+    schoolFeesProof: { name: 'fees_proof.pdf' } as File,
+    birthCertificate: { name: 'bc.pdf' } as File,
+    latestSchoolResult: { name: 'latest_result.pdf' } as File,
+    financialAssistanceLetter: { name: 'letter.pdf' } as File,
+  },
+  declarations: {
+    childConfirmation: true,
+    parentConfirmation: true,
+    churchMembershipConfirmation: 'Member ID: 12345',
+  },
+};
+
+export const mockApplicationDetails = new Map<string, FormData>([
+    ['APP001', mockApplicationData_APP001],
+    ['APP002', mockApplicationData_APP002],
+]);

@@ -1,0 +1,88 @@
+import { ApplicationSummary } from './types';
+
+export const mockApplications: ApplicationSummary[] = [
+  {
+    id: 'APP001',
+    applicantName: 'Adebayo Johnson',
+    submissionDate: '2024-07-20',
+    status: 'Approved',
+    scholarshipType: 'Tertiary',
+  },
+  {
+    id: 'APP002',
+    applicantName: 'Ngozi Okoro',
+    submissionDate: '2024-07-19',
+    status: 'Under Review',
+    scholarshipType: 'SSS',
+  },
+  {
+    id: 'APP003',
+    applicantName: 'Emeka Chukwu',
+    submissionDate: '2024-07-21',
+    status: 'Submitted',
+    scholarshipType: 'JSS',
+  },
+  {
+    id: 'APP004',
+    applicantName: 'Fatima Bello',
+    submissionDate: '2024-07-18',
+    status: 'Rejected',
+    scholarshipType: 'Primary',
+  },
+  {
+    id: 'APP005',
+    applicantName: 'Tunde Adekunle',
+    submissionDate: '2024-07-22',
+    status: 'Interview Scheduled',
+    scholarshipType: 'Tertiary',
+  },
+  {
+    id: 'APP006',
+    applicantName: 'Chiamaka Nwosu',
+    submissionDate: '2024-07-15',
+    status: 'Approved',
+    scholarshipType: 'SSS',
+  },
+  {
+    id: 'APP007',
+    applicantName: 'Musa Ibrahim',
+    submissionDate: '2024-07-23',
+    status: 'Submitted',
+    scholarshipType: 'Primary',
+  },
+  {
+    id: 'APP008',
+    applicantName: 'Yemi Alade',
+    submissionDate: '2024-07-17',
+    status: 'Under Review',
+    scholarshipType: 'JSS',
+  },
+  {
+    id: 'APP009',
+    applicantName: 'Oluwaseun Adeboye',
+    submissionDate: '2024-07-20',
+    status: 'Submitted',
+    scholarshipType: 'Tertiary',
+  },
+  {
+    id: 'APP010',
+    applicantName: 'Aisha Yusuf',
+    submissionDate: '2024-06-30',
+    status: 'Rejected',
+    scholarshipType: 'SSS',
+  },
+  {
+    id: 'APP011',
+    applicantName: 'Ibrahim Salami',
+    submissionDate: '2024-07-22',
+    status: 'Under Review',
+    scholarshipType: 'Primary',
+  },
+  {
+    id: 'APP012',
+    applicantName: 'Bolanle Ojo',
+    submissionDate: '2024-07-24',
+    status: 'Submitted',
+    scholarshipType: 'Tertiary',
+  },
+];

@@ -1,0 +1,5 @@
+{
+  "name": "ETF Scholarship Program Application",
+  "description": "A web application to manage the Celestial Church of Christ (CCC) Central Cathedral, Abuja's Education Trust Fund (ETF) Scholarship Program. This app allows applicants to fill out and submit their scholarship applications online.",
+  "requestFramePermissions": []
+}
